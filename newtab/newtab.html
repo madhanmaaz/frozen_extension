@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab - Frozen</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/newtab.css">
+
+    <script defer src="./assets/js/client-dist/socket.io.js"></script>
+    <script defer src="./assets/js/app.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <form title="Dblclick to search" target="_blank" action="https://google.com/search" method="get">
+                <i class="br br-google"></i>
+                <input class="google-search" type="search" name="q" autocomplete="off" placeholder="Multi Search..." />
+            </form>
+            <div class="bookmarks-search">
+                <div class="result-bookmarks scroll">
+                    <!-- <a class="item" target="_blank">
+                        <button class="mark-1">br-facebook</button>
+                    </a> -->
+                </div>
+                <p>Links Category</p>
+                <table class="cat-link">
+                    <tr class="col">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Social</td>
+                        <td>Tools</td>
+                        <td>Editor</td>
+                        <td>Downloaders</td>
+                        <td>Non</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="right">
+            <a href="https://google.com/" target="_blank">
+                <i class="br br-google"></i>
+            </a>
+            <a href="https://facebook.com/" target="_blank">
+                <i class="br br-facebook"></i>
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank">
+                <i class="so so-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="br br-instagram"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+                <i class="so so-twitter"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="content">
+            <div class="box bookmarks scroll">
+                <div class="set">
+                    <button class="open-addlink">
+                        <i class="so so-plus"></i>
+                    </button>
+                    <button class="open-removelink">
+                        <i class="so so-times"></i>
+                    </button>
+                </div>
+
+                <div class="bookmarks-content">
+                    <!-- <a href=${url} target="_blank">
+                        <button title=${name}>
+                            <img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${url}&size=64"
+                            alt="error">
+                        </button>
+                    </a> -->
+                </div>
+            </div>
+            <div class="box clock">
+                <p>00:00:00<span>am</span></p>
+                <b></b>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="left">
+                <p>Designed by Madhan</p>
+            </div>
+
+            <div class="right">
+                <button class="open-chat">
+                    <i class="br br-messenger"></i>
+                </button>
+                <a href="page/settings.html">
+                    <button class="open-settings">
+                        <i class="so so-gear"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <form class="add-link">
+        <div class="content">
+            <h2>add link</h2>
+            <input type="text" required class="name" placeholder="Name">
+            <div class="http">
+                <select class="pro">
+                    <option selected value="non">Non</option>
+                    <option value="http">http</option>
+                    <option value="https">https</option>
+                    <option value="ftp">ftp</option>
+                    <option value="page">page</option>
+                </select>
+                <input type="text" required class="url" placeholder="Url">
+            </div>
+            <select class="cat" required>
+                <option value="mark-1">Social media</option>
+                <option value="mark-2">Tools</option>
+                <option value="mark-3">Editor</option>
+                <option value="mark-4">Downloaders</option>
+                <option value="mark-5" selected>Non</option>
+            </select>
+            <button type="submit" class="add">add</button>
+
+            <p>Links Category</p>
+            <table class="cat-link">
+                <tr class="col">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>Tools</td>
+                    <td>Editor</td>
+                    <td>Downloaders</td>
+                    <td>Non</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+    <section class="remove-content">
+        <div class="head">
+            <h1>Remove Bookmarks</h1>
+            <div>
+                <button class="save-remove-link">save</button>
+                <i class="so so-times close-remove-links"></i>
+            </div>
+        </div>
+
+        <div class="remove-links scroll">
+            <h2>Loading...</h2>
+        </div>
+    </section>
+
+    <section class="chat">
+        <h1><span>frozen chat</span> <i class="so so-times close-chat"></i></h1>
+        <div class="content scroll">
+            <p>Chat with your Frozens</p>
+        </div>
+
+        <form class="message-box">
+            <input type="text" placeholder="Message...">
+            <button type="submit">
+                <i class="so so-telegram-plane"></i>
+            </button>
+        </form>
+    </section>
+
+    <section class="alert">
+        alert
+    </section>
+</body>
+
+</html>

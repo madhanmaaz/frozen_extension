@@ -1,0 +1,573 @@
+body {
+    height: 100vh;
+    position: relative;
+    color: #e5e5e5;
+    background: #000;
+    /* background: url(../src/img/1.jpg) center center / cover no-repeat; */
+}
+
+.header {
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0));
+    height: 10vh;
+}
+
+.header .left {
+    width: 500px;
+    position: relative;
+}
+
+.header .left form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    padding: .3rem;
+    border-radius: 6px;
+}
+
+.header .left form i {
+    color: var(--main-color);
+    font-size: 1.2rem;
+    padding: .3rem;
+}
+
+.header .left form input {
+    width: 100%;
+    font-size: 1.1rem;
+    color: #e5e5e5;
+    margin-left: .3rem;
+}
+
+.header .left .bookmarks-search {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 500px;
+    color: #fff;
+    z-index: 700;
+    border-radius: 8px;
+    box-shadow: 0 0 1rem #000;
+    padding: .5rem;
+    display: none;
+}
+
+.header .left .bookmarks-search.active {
+    display: block;
+}
+
+.header .left .result-bookmarks {
+    overflow-y: scroll;
+    height: 85%;
+}
+
+.header .left .result-bookmarks button {
+    color: #e5e5e5;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    background: rgb(16, 6, 73);
+    width: 100%;
+    padding: .5rem;
+    cursor: pointer;
+    text-align: left;
+    border-left: 8px solid transparent;
+}
+
+.header .left .result-bookmarks button:hover {
+    background: var(--main-color);
+}
+
+.header .left .result-bookmarks button.mark-1 {
+    border-color: #00ff00;
+}
+
+.header .left .result-bookmarks button.mark-2 {
+    border-color: #ff0000;
+}
+
+.header .left .result-bookmarks button.mark-3 {
+    border-color: #eeff00;
+}
+
+.header .left .result-bookmarks button.mark-4 {
+    border-color: #0059ff;
+}
+
+.header .left .result-bookmarks button.mark-5 {
+    border-color: #e9055c;
+}
+
+.header .left .result-bookmarks h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header .left .result-bookmarks p {
+    margin-top: .3rem;
+    font-size: 1rem;
+}
+
+.header .right {
+    display: flex;
+    align-items: center;
+}
+
+.header .right a i {
+    padding: .5rem;
+    font-size: 1.3rem;
+    color: var(--main-color);
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+.header .right a:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container .content {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container .content .bookmarks {
+    width: 36%;
+    height: 167px;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
+    padding: .8rem;
+    border-radius: 6px;
+    user-select: none;
+}
+
+.container .content .bookmarks:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.container .content .bookmarks .set {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    display: none;
+}
+
+.container .content .bookmarks::-webkit-scrollbar {
+    width: 0;
+}
+
+.container .content .bookmarks:hover .set {
+    display: block;
+}
+
+.container .content .bookmarks .set button {
+    display: block;
+    position: sticky;
+    top: 0;
+    padding: .5rem .2rem;
+    color: var(--main-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.container .content .bookmarks .bookmarks-content button {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: .2rem auto;
+}
+
+.container .content .bookmarks .bookmarks-content button img {
+    width: 35px;
+}
+
+/* clock */
+
+.container .content .clock {
+    color: #e5e5e5;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.container .content .clock p{
+    font-size: 3.4rem;
+}
+
+.container .content .clock p span{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.container .content .clock b{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 300px;
+    height: 2px;
+    background: var(--main-color);
+    box-shadow: 0 0 1rem .1rem #000;
+    border-radius: 100%;
+}
+
+@keyframes aniclock {
+    0%{
+        top: 0;
+    }
+    50%{
+        top: 100%;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+/* footer */
+.container .footer {
+    padding: 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    display: flex;
+    justify-content: space-between;
+    color: #e5e5e5;
+}
+
+.container .footer .left {
+    color: rgba(255, 255, 255, 0.8);
+    user-select: none;
+    font-size: 1rem;
+}
+
+.container .footer .right {
+    display: flex;
+    align-items: center;
+}
+
+.container .footer .right button {
+    color: var(--main-color);
+    font-size: 1.3rem;
+    padding: .2rem .6rem;
+    cursor: pointer;
+}
+
+/* add link */
+.add-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: grid;
+    place-items: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: .1s;
+}
+
+.add-link.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.add-link .content {
+    width: 380px;
+    background: #000;
+    padding: .5rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.add-link .content h2 {
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.add-link .content input,
+.add-link .content select {
+    width: 100%;
+    font-size: 1.1rem;
+    color: #e5e5e5;
+    border: 3px solid transparent;
+    padding: .5rem;
+    margin: .4rem auto;
+    background: #111;
+    border-radius: 6px;
+}
+
+.add-link .content .http {
+    display: flex;
+    background: #111;
+    border-radius: 8px;
+}
+
+.add-link .content .http .pro {
+    flex: 1;
+}
+
+.add-link .content .http input {
+    flex: 3;
+}
+
+.add-link .content input:focus {
+    border-color: var(--main-color);
+}
+
+.add-link .content button {
+    width: 100%;
+    margin-top: .3rem;
+    border-radius: 6px;
+    background: var(--main-color);
+    padding: .5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.add-link .content p {
+    margin-top: .3rem;
+    font-size: 1rem;
+}
+
+.cat-link {
+    margin-top: .4rem;
+    font-size: 1rem;
+}
+
+.cat-link td {
+    padding: .3rem;
+}
+
+.cat-link .col td:nth-child(1) {
+    background: #00ff00;
+}
+
+.cat-link .col td:nth-child(2) {
+    background: #ff0000;
+}
+
+.cat-link .col td:nth-child(3) {
+    background: #eeff00;
+}
+
+.cat-link .col td:nth-child(4) {
+    background: #0051ff;
+}
+
+.cat-link .col td:nth-child(5) {
+    background: rgb(255, 0, 98);
+}
+
+.remove-content {
+    background: #000;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.remove-content.active {
+    right: 0;
+}
+
+.remove-content .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+.remove-content .head div {
+    display: flex;
+    align-items: center;
+}
+
+.remove-content .head button {
+    background: var(--main-color);
+    border-radius: 8px;
+    color: #e5e5e5;
+    padding: .5rem;
+    margin-right: .8rem;
+    font-size: 1.2rem;
+}
+
+.remove-content .head i {
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 0 .5rem;
+}
+
+.remove-content .remove-links {
+    height: 90vh;
+    overflow-y: scroll;
+    padding: .5rem;
+    text-align: center;
+}
+
+.remove-content .remove-links .item {
+    display: inline-block;
+    width: 300px;
+    height: 70px;
+    background: #111;
+    padding: .3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: .1rem;
+    cursor: pointer;
+}
+
+.remove-content .remove-links .item span {
+    display: none;
+}
+
+/* chat */
+.chat {
+    width: 500px;
+    background: #000;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.chat.active {
+    right: 0;
+}
+
+.chat h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 400;
+    text-transform: uppercase;
+    padding: .5rem;
+    height: 10vh;
+}
+
+.chat h1 i {
+    cursor: pointer;
+}
+
+.chat .content {
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.chat .content p {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.chat .content li {
+    list-style: none;
+    padding: .5rem;
+    word-break: keep-all;
+    margin: .1rem auto;
+}
+
+.chat .content li div:nth-child(1) {
+    display: inline-block;
+    background: #000;
+    padding: .3rem;
+    border-radius: 5px;
+    color: #e5e5e5;
+}
+
+.chat .content .client {
+    background: linear-gradient(90deg, #8e05e9, #e9055c);
+}
+
+.chat .content .self {
+    text-align: right;
+    background: linear-gradient(90deg, #1797ff, #0051ff);
+}
+
+.chat .content .online {
+    text-align: center;
+    background: linear-gradient(90deg, #00ff00, #a6ff31);
+    color: #000;
+}
+
+.chat .content .offonline {
+    text-align: center;
+    background: linear-gradient(90deg, #ff0000, #ff3831);
+    color: rgb(233, 233, 233);
+}
+
+.chat .message-box {
+    background: #111;
+    height: 10vh;
+    display: flex;
+}
+
+.chat .message-box input {
+    color: #e5e5e5;
+    font-size: 1.2rem;
+    padding: .8rem;
+    width: 100%;
+}
+
+.chat .message-box button {
+    background: #053ae9;
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    color: #e5e5e5;
+}
+
+.alert {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    padding: .5rem;
+    border-radius: 6px;
+    user-select: none;
+}
+
+.alert.active {
+    top: 3rem;
+}
+
+
+
+
+
+
+@media(max-width: 1000px) {
+    .container .content {
+        flex-direction: column-reverse;
+    }
+
+    .container .content .box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container .content .bookmarks {
+        height: 162px;
+    }
+
+}
